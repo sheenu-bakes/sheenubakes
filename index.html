@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sheenu Bakes — Order Fresh Eggless Bakes Online | Noida</title>
+<link rel="icon" type="image/png" href="https://png.pngtree.com/png-vector/20230407/ourmid/pngtree-baking-logo-vector-png-image_6678232.png">
+<meta name="description" content="Order eggless cakes, loaves, muffins, cookies and icing cakes from Sheenu Bakes — a home bakery in Noida. Baked fresh to order.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --white:#FFFFFF;
+    --bg:#FBF9F6;
+    --ink:#2A2118;
+    --ink-soft:#6E6157;
+    --maroon:#7A1F2B;
+    --maroon-dark:#5E1620;
+    --gold:#C9962E;
+    --gold-soft:#F6EBD3;
+    --veg:#1E7A34;
+    --line:#EAE3D9;
+    --display:'Marcellus', Georgia, serif;
+    --body:'Jost', -apple-system, sans-serif;
+    --shadow:0 2px 8px rgba(42,33,24,.06);
+    --shadow-hover:0 12px 28px -10px rgba(42,33,24,.22);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *,*::before,*::after{animation:none!important;transition:none!important;}
+  }
+  body{
+    font-family:var(--body);
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.6;
+    font-size:16.5px;
+  }
+  ::selection{background:var(--maroon);color:#fff;}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 24px;}
+  a:focus-visible,button:focus-visible{outline:2.5px solid var(--gold);outline-offset:3px;border-radius:4px;}
+
+  /* ---------- announcement bar ---------- */
+  .announce{
+    background:var(--maroon);color:#F5E3D3;
+    text-align:center;font-size:.85rem;font-weight:500;letter-spacing:.04em;
+    padding:9px 16px;
+  }
+  .announce b{color:var(--gold);}
+
+  /* ---------- header ---------- */
+  .site-head{
+    background:var(--white);
+    border-bottom:1px solid var(--line);
+    position:sticky;top:0;z-index:50;
+  }
+  .head-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 0;gap:20px;
+  }
+  .logo{
+    font-family:var(--display);
+    font-size:1.45rem;line-height:1.1;
+    color:var(--maroon);
+    text-decoration:none;
+  }
+  .site-head .logo{font-size:1.8rem;}
+  .logo small{
+    display:block;font-family:var(--body);
+    font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;
+    color:var(--ink-soft);margin-top:2px;
+  }
+  .cat-nav{display:flex;gap:24px;flex-wrap:wrap;}
+  .cat-nav a{
+    color:var(--ink);text-decoration:none;font-weight:500;font-size:.92rem;
+    letter-spacing:.02em;text-transform:uppercase;
+    padding-bottom:2px;border-bottom:2px solid transparent;
+  }
+  .cat-nav a:hover{color:var(--maroon);border-bottom-color:var(--gold);}
+  @media(max-width:900px){.cat-nav{display:none;}}
+  .head-order{
+    background:var(--maroon);color:#fff;
+    text-decoration:none;font-weight:600;font-size:.9rem;
+    padding:11px 22px;border-radius:6px;
+    white-space:nowrap;
+    transition:background .15s ease;
+  }
+  .head-order:hover{background:var(--maroon-dark);}
+
+  /* ---------- hero banner ---------- */
+  .hero{
+    background:
+      radial-gradient(ellipse at 78% 20%, rgba(201,150,46,.28), transparent 55%),
+      radial-gradient(ellipse at 15% 90%, rgba(122,31,43,.5), transparent 60%),
+      linear-gradient(120deg, #4A1119 0%, var(--maroon) 55%, #93303C 100%);
+    color:#fff;
+    padding:88px 0 96px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{ /* scalloped bottom edge, like a doily */
+    content:"";
+    position:absolute;left:0;right:0;bottom:-14px;height:28px;
+    background:radial-gradient(circle at 14px -6px, transparent 18px, var(--bg) 19px);
+    background-size:28px 28px;
+  }
+  .hero-inner{max-width:640px;}
+  .hero .tagline{
+    display:inline-block;
+    border:1px solid rgba(255,255,255,.4);
+    border-radius:999px;
+    padding:7px 18px;
+    font-size:.82rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--gold-soft);
+    margin-bottom:26px;
+  }
+  .hero h1{
+    font-family:var(--display);font-weight:400;
+    font-size:clamp(2.4rem, 5.6vw, 4rem);
+    line-height:1.08;
+  }
+  .hero h1 span{color:var(--gold);}
+  .hero p{
+    margin-top:18px;font-size:1.08rem;color:#F1DFD2;max-width:50ch;
+  }
+  .hero-cta{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;padding:14px 30px;border-radius:6px;
+    text-decoration:none;font-weight:600;font-size:.98rem;
+    transition:transform .15s ease, background .15s ease;
+  }
+  .btn-gold{background:var(--gold);color:var(--maroon-dark);}
+  .btn-gold:hover{transform:translateY(-2px);background:#D9A83E;}
+  .btn-outline{border:1.5px solid rgba(255,255,255,.65);color:#fff;}
+  .btn-outline:hover{background:rgba(255,255,255,.12);}
+
+  /* ---------- USP strip ---------- */
+  .usp{
+    background:var(--white);
+    border-bottom:1px solid var(--line);
+    padding:22px 0;
+  }
+  .usp-row{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:16px;text-align:center;
+  }
+  .usp-item{font-size:.92rem;color:var(--ink-soft);font-weight:500;}
+  .usp-item b{color:var(--maroon);display:block;font-size:.98rem;}
+
+  /* ---------- section headers ---------- */
+  section.shop-section{padding:72px 0 26px;}
+  .sec-head{
+    display:flex;align-items:baseline;justify-content:space-between;gap:18px;
+    margin-bottom:34px;flex-wrap:wrap;
+  }
+  .sec-head h2{
+    font-family:var(--display);font-weight:400;
+    font-size:clamp(1.7rem, 3.4vw, 2.3rem);
+    color:var(--ink);
+    position:relative;padding-bottom:12px;
+  }
+  .sec-head h2::after{
+    content:"";position:absolute;left:0;bottom:0;
+    width:64px;height:3px;background:var(--gold);border-radius:2px;
+  }
+  .sec-head .sub{color:var(--ink-soft);font-size:.95rem;max-width:46ch;}
+
+  /* ---------- product grid & cards ---------- */
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(250px, 1fr));
+    gap:24px;
+  }
+  .grid-scroll{
+    display:flex;
+    gap:24px;
+    overflow-x:auto;
+    padding-bottom:12px;
+    scroll-snap-type:x proximity;
+    -webkit-overflow-scrolling:touch;
+  }
+  .grid-scroll .product{
+    flex:0 0 250px;
+    scroll-snap-align:start;
+  }
+  .grid-scroll::-webkit-scrollbar{height:8px;}
+  .grid-scroll::-webkit-scrollbar-thumb{background:var(--line);border-radius:4px;}
+  .product{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:12px;
+    overflow:hidden;
+    display:flex;flex-direction:column;
+    box-shadow:var(--shadow);
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .product:hover{transform:translateY(-5px);box-shadow:var(--shadow-hover);}
+  .p-img{
+    aspect-ratio:1/.82;
+    display:flex;align-items:center;justify-content:center;
+    font-size:4rem;
+    position:relative;
+  }
+  .p-img.g1{background:linear-gradient(135deg,#F8E8D8,#F2D2B8);}
+  .p-img.g2{background:linear-gradient(135deg,#F4E3E6,#E8C6CC);}
+  .p-img.g3{background:linear-gradient(135deg,#EFE9DA,#DFD3B4);}
+  .p-img.g4{background:linear-gradient(135deg,#E9EDE2,#CFDCC2);}
+  .p-img.g5{background:linear-gradient(135deg,#F3E6D2,#E7CBA0);}
+  .p-img.g6{background:linear-gradient(135deg,#EFE0EA,#DCC2D4);}
+  .p-img img{width:100%;height:100%;object-fit:cover;}
+  .p-img .ribbon{
+    position:absolute;top:12px;left:12px;
+    background:var(--maroon);color:#fff;
+    font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    padding:4px 10px;border-radius:4px;
+  }
+  .p-img .ribbon.gold{background:var(--gold);color:var(--maroon-dark);}
+  .p-body{
+    padding:18px 18px 20px;
+    display:flex;flex-direction:column;gap:8px;flex:1;
+  }
+  .p-badges{display:flex;gap:8px;align-items:center;}
+  .veg-mark{
+    width:15px;height:15px;border:1.6px solid var(--veg);
+    display:inline-flex;align-items:center;justify-content:center;
+    border-radius:2px;flex:none;
+  }
+  .veg-mark::after{content:"";width:7px;height:7px;border-radius:50%;background:var(--veg);}
+  .chip{
+    font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--veg);background:#E8F3EA;
+    padding:3px 9px;border-radius:999px;
+  }
+  .p-body h3{
+    font-family:var(--display);font-weight:400;font-size:1.12rem;line-height:1.25;
+  }
+  .p-body .desc{font-size:.86rem;color:var(--ink-soft);flex:1;}
+  .p-foot{
+    display:flex;align-items:center;justify-content:space-between;gap:10px;
+    margin-top:6px;
+  }
+  .price{font-weight:700;font-size:1.06rem;color:var(--maroon);}
+  .price small{font-weight:500;color:var(--ink-soft);font-size:.76rem;display:block;}
+  .add-btn{
+    background:var(--white);color:var(--maroon);
+    border:1.5px solid var(--maroon);
+    text-decoration:none;font-weight:600;font-size:.85rem;
+    padding:9px 16px;border-radius:6px;white-space:nowrap;
+    transition:all .15s ease;
+  }
+  .add-btn:hover{background:var(--maroon);color:#fff;}
+
+  /* ---------- icing cake note ---------- */
+  .icing-note{
+    margin-top:36px;
+    text-align:center;
+    padding:28px 24px;
+    background:var(--gold-soft);
+    border-radius:14px;
+  }
+  .icing-note p{
+    color:var(--ink-soft);font-size:1.12rem;
+    max-width:58ch;margin:0 auto 18px;
+  }
+
+  /* ---------- custom cake banner ---------- */
+  .custom{
+    margin:80px 0 8px;
+    background:
+      radial-gradient(ellipse at 85% 10%, rgba(201,150,46,.35), transparent 55%),
+      linear-gradient(115deg, #40232B, var(--maroon-dark));
+    border-radius:18px;
+    color:#fff;
+    padding:56px 52px;
+    display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;
+  }
+  .custom h2{
+    font-family:var(--display);font-weight:400;
+    font-size:clamp(1.6rem,3.2vw,2.3rem);max-width:20ch;line-height:1.15;
+  }
+  .custom p{color:#EBD8CB;margin-top:10px;max-width:48ch;font-size:.98rem;}
+  .custom ul{
+    list-style:none;margin-top:16px;display:flex;gap:22px;flex-wrap:wrap;
+    font-size:.9rem;color:var(--gold-soft);
+  }
+  .custom ul li::before{content:"✦ ";color:var(--gold);}
+
+  /* ---------- story ---------- */
+  #story{padding:84px 0;}
+  .story-box{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:52px;
+    display:grid;grid-template-columns:auto 1fr;gap:44px;align-items:center;
+    box-shadow:var(--shadow);
+  }
+  @media(max-width:760px){.story-box{grid-template-columns:1fr;padding:36px 28px;}}
+  .story-medal{
+    width:130px;height:130px;border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, #F0D9A0, var(--gold));
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    color:var(--maroon-dark);
+    font-family:var(--display);text-align:center;line-height:1.15;
+    box-shadow:0 8px 20px -8px rgba(201,150,46,.6);
+    flex:none;
+  }
+  .story-medal b{font-size:1.9rem;}
+  .story-medal span{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-family:var(--body);font-weight:600;}
+  .story-box h2{font-family:var(--display);font-weight:400;font-size:1.8rem;margin-bottom:12px;}
+  .story-box p{color:var(--ink-soft);font-size:.98rem;margin-bottom:10px;}
+
+  /* ---------- footer ---------- */
+  footer{background:#2A1216;color:#D9C4B8;padding:64px 0 34px;}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:44px;}
+  @media(max-width:760px){.foot-grid{grid-template-columns:1fr;}}
+  footer .logo{color:#fff;}
+  footer .logo small{color:#B99A8C;}
+  footer p.mini{font-size:.9rem;margin-top:14px;max-width:36ch;color:#B99A8C;}
+  footer h4{
+    font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--gold);margin-bottom:16px;
+  }
+  footer a, footer .col p{color:#D9C4B8;text-decoration:none;display:block;margin-bottom:9px;font-size:.93rem;}
+  footer a:hover{color:#fff;}
+  .foot-bottom{
+    margin-top:52px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);
+    display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+    font-size:.82rem;color:#A08579;
+  }
+
+  /* ---------- floating whatsapp ---------- */
+  .wa-float{
+    position:fixed;right:22px;bottom:22px;z-index:60;
+    width:58px;height:58px;border-radius:50%;
+    background:#25D366;color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.7rem;text-decoration:none;
+    box-shadow:0 8px 24px -6px rgba(37,211,102,.65);
+    transition:transform .15s ease;
+  }
+  .wa-float:hover{transform:scale(1.08);}
+</style>
+</head>
+<body>
+
+<div class="announce">🧁 <b>Baked to order</b> — please give us 1–2 days' notice · Free pickup in Noida · <b>100% Eggless</b></div>
+
+<div class="site-head">
+  <div class="wrap head-inner">
+    <a class="logo" href="#top">Sheenu Bakes<small>Home Bakery · Est. at our dining table</small></a>
+    <nav class="cat-nav" aria-label="Categories">
+      <a href="#loafs">Loafs</a>
+      <a href="#teacakes">Tea Cakes</a>
+      <a href="#muffins">Muffins</a>
+      <a href="#cookies">Cookies</a>
+      <!-- <a href="#brownies">Brownies</a> -->
+      <a href="#icingcakes">Icing Cakes</a>
+    </nav>
+    <a class="head-order" href="https://wa.me/919899168807?text=Hi%20Sheenu%20Bakes!%20I'd%20like%20to%20place%20an%20order.">Order on WhatsApp</a>
+  </div>
+</div>
+
+<header class="hero" id="top">
+  <div class="wrap hero-inner">
+    <span class="tagline">Home Bakery · Noida</span>
+    <h1>Fresh eggless bakes, <span>made only when you order.</span></h1>
+    <p>Travel-friendly loaves, tea-time cakes, soft muffins, cookie boxes and whipped-cream icing cakes — small-batch baked in our home kitchen with ingredients we'd serve our own family.</p>
+    <div class="hero-cta">
+      <a class="btn btn-gold" href="#bestsellers">Shop Bestsellers</a>
+      <a class="btn btn-outline" href="https://wa.me/919899168807?text=Hi!%20I'd%20like%20to%20order%20a%20custom%20cake.">Custom Cake Enquiry</a>
+    </div>
+  </div>
+</header>
+
+<div class="usp">
+  <div class="wrap usp-row">
+    <div class="usp-item"><b>100% Eggless</b>pure ingredients, always</div>
+    <div class="usp-item"><b>Baked Fresh</b>never from a shelf</div>
+    <div class="usp-item"><b>Home Kitchen</b>small batches only</div>
+    <div class="usp-item"><b>Pickup &amp; Delivery</b>across Noida</div>
+  </div>
+</div>
+
+<section class="shop-section" id="bestsellers">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Bestsellers</h2>
+      <span class="sub">The bakes our regulars order again and again.</span>
+    </div>
+    <div class="grid grid-scroll">
+      <div class="product">
+        <div class="p-img g2"><span class="ribbon">Most Loved</span><img src="https://images.yummy.ph/yummy/uploads/2019/09/chocolatefudgeloafcakeercipe-1.jpg" alt="Chocolate Mud Cake"></div>
+        <div class="p-body">
+          <div class="p-badges"><span class="veg-mark" title="Pure Veg"></span><span class="chip">Eggless</span></div>
+          <h3>Chocolate Mud Cake</h3>
+          <p class="desc">Dense, dark and fudgy with a chocolate-cream glaze and a hint of coffee.</p>
+          <div class="p-foot">
+            <span class="price">₹1199<small>loaf, ~1000gm</small></span>
+            <a class="add-btn" href="https://wa.me/919899168807?text=Hi!%20I'd%20like%20to%20order%20the%20Chocolate%20Mud%20Cake.">Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="p-img g5"><span class="ribbon gold">Festive Pick</span><img src="https://aromaticessence.co/wp-content/uploads/2016/02/image67.jpeg" alt="Pineapple Tutti Frutti Loaf"></div>
+        <div class="p-body">
+          <div class="p-badges"><span class="veg-mark"></span><span class="chip">Eggless</span></div>
+          <h3>Pineapple Tutti Frutti Loaf</h3>
+          <p class="desc">Classic soft vanilla sponge loaded with pineapple bits and colourful tutti frutti.</p>
+          <div class="p-foot">
+            <span class="price">₹299<small>loaf, ~300gm</small></span>
+            <a class="add-btn" href="https://wa.me/919899168807?text=Hi!%20I'd%20like%20to%20order%20the%20Pineapple%20Tutti%20Frutti%20Loaf.">Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="p-img g1"><img src="https://cdn.dotpe.in/longtail/store-items/7933721/pJYCoZyd.jpeg" alt="Cravers Crave Jar"></div>
+        <div class="p-body">
+          <div class="p-badges"><span class="veg-mark"></span><span class="chip">Eggless</span></div>
+          <h3>Cravers Crave Jar</h3>
+          <p class="desc">Layered dessert jar loaded with cake, cream and crunchy toppings.</p>
+          <div class="p-foot">
+            <span class="price">₹249<small>1 jar</small></span>
+            <a class="add-btn" href="https://wa.me/919899168807?text=Hi!%20I'd%20like%20to%20order%20the%20Cravers%20Crave%20Jar.">Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="p-img g2"><img src="https://gurgaonbakers.com/wp-content/uploads/2020/11/fantastic-fruit-jar-cake.jpg" alt="Fruity Island Jar"></div>
+        <div class="p-body">
+          <div class="p-badges"><span class="veg-mark"></span><span class="chip">Eggless</span></div>
+          <h3>Fruity Island Jar</h3>
+          <p class="desc">Layered dessert jar loaded with cake, cream and fresh fruit.</p>
+          <div class="p-foot">
+            <span class="price">₹249<small>1 jar</small></span>
+            <a class="add-btn" href="https://wa.me/919899168807?text=Hi!%20I'd%20like%20to%20order%20the%20Fruity%20Island%20Jar.">Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="p-img g3"><img src="https://www.modernhoney.com/wp-content/uploads/2021/05/Classic-Chocolate-Chip-Cookies-5-scaled.jpg" alt="Classic Chocochip Cookies"></div>
+        <div class="p-body">
+          <div class="p-badges"><span class="veg-mark"></span><span class="chip">Eggless</span></div>
+          <h3>Classic Chocochip Cookies</h3>
+          <p class="desc">Buttery, chewy cookies loaded with classic chocolate chips.</p>
+          <div class="p-foot">
+            <span class="price">₹349<small>box of 6</small></span>
+            <a class="add-btn" href="https://wa.me/919899168807?text=Hi!%20I'd%20like%20to%20order%20a%20box%20of%20Classic%20Chocochip%20Cookies.">Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="p-img g1"><img src="https://kannanskitchen.com/wp-content/uploads/2022/12/DSC_3703.jpg" alt="Vanilla Chocochip Muffins"></div>
+        <div class="p-body">
+          <div class="p-badges"><span class="veg-mark"></span><span class="chip">Eggless</span></div>
+          <h3>Vanilla Chocochip Muffins (Box of 8)</h3>
+          <p class="desc">Soft curd-based muffins studded with chocochips. Baked the same morning.</p>
+          <div class="p-foot">
+            <span class="price">₹349<small>box of 8</small></span>
+            <a class="add-btn" href="https://wa.me/919899168807?text=Hi!%20I'd%20like%20to%20order%20a%20box%20of%20Vanilla%20Chocochip%20Muffins.">Order</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="shop-section" id="loafs">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Loafs</h2>
+      <span class="sub">Everyday loaves that stay fresh 10–12 days — great for travel and gifting.</span>
+    </div>
+    <div class="grid">
+      <div class="product">
+        <div class="p-img g5"><span class="ribbon gold">Festive Pick</span><img src="https://aromaticessence.co/wp-content/uploads/2016/02/image67.jpeg" alt="Pineapple Tutti Frutti Loaf"></div>
+        <div class="p-body">
+          <div class="p-badges"><span class="veg-mark"></span><span class="chip">Eggless</span></div>
+          <h3>Pineapple Tutti Frutti Loaf</h3>
+          <p class="desc">Classic soft vanilla sponge loaded with pineapple bits and colourful tutti frutti.</p>
+          <div class="p-foot">
+            <span class="price">₹299<small>loaf, ~300gm</small></span>
+            <a class="add-btn" href="https://wa.me/919899168807?text=Hi!%20I'd%20like%20to%20order%20the%20Pineapple%20Tutti%20Frutti%20Loaf.">Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="p-img g3"><img src="https://www.abakingjourney.com/wp-content/uploads/2020/07/Marble-Loaf-Cake-Feature.jpg" alt="Marble Loaf"></div>
+        <div class="p-body">
+          <div class="p-badges"><span class="veg-mark"></span><span class="chip">Eggless</span></div>
+          <h3>Marble Loaf</h3>
+          <p class="desc">Swirls of vanilla and chocolate sponge baked into one loaf.</p>
+          <div class="p-foot">
+            <span class="price">₹299<small>loaf, ~300gm</small></span>
+            <a class="add-btn" href="https://wa.me/919899168807?text=Hi!%20I'd%20like%20to%20order%20the%20Marble%20Loaf.">Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="p-img g4"><img src="https://bakewithshivesh.com/wp-content/uploads/2018/07/TRIPLE-CHOCOLATE-BANANA-BREAD.jpg" alt="Triple Chocolate Loaf"></div>
+        <div class="p-body">
+          <div class="p-badges"><span class="veg-mark"></span><span class="chip">Eggless</span></div>
+          <h3>Triple Chocolate Loaf</h3>
+          <p class="desc">Cocoa crumb loaded with dark, milk and white chocolate chunks.</p>
+          <div class="p-foot">
+            <span class="price">₹299<small>loaf, ~300gm</small></span>
+            <a class="add-btn" href="https://wa.me/919899168807?text=Hi!%20I'd%20like%20to%20order%20the%20Triple%20Chocolate%20Loaf.">Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="p-img g2"><img src="https://cupboarddiaries.com/wp-content/uploads/2024/05/IMG_E2823-scaled.jpg" alt="Classic Strawberry Loaf"></div>
+        <div class="p-body">
+          <div class="p-badges"><span class="veg-mark"></span><span class="chip">Eggless</span></div>
+          <h3>Classic Strawberry Loaf</h3>
+          <p class="desc">Soft vanilla crumb swirled with real strawberry compote.</p>
+          <div class="p-foot">
+            <span class="price">₹299<small>loaf, ~300gm</small></span>
+            <a class="add-btn" href="https://wa.me/919899168807?text=Hi!%20I'd%20like%20to%20order%20the%20Classic%20Strawberry%20Loaf.">Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="p-img g6"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxJTehWEE97an4WnP0UJEaeEiyRD2EkBuxy3l8y2Aw0oP2jzJ9gGHtDGc&s=10" alt="Pistachio Loaf"></div>
+        <div class="p-body">
+          <div class="p-badges"><span class="veg-mark"></span><span class="chip">Eggless</span></div>
+          <h3>Pistachio Loaf</h3>
+          <p class="desc">Real pistachio crumb with a delicate nutty finish.</p>
+          <div class="p-foot">
+            <span class="price">₹349<small>loaf, ~300gm</small></span>
+            <a class="add-btn" href="https://wa.me/919899168807?text=Hi!%20I'd%20like%20to%20order%20the%20Pistachio%20Loaf.">Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="p-img g1"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS06jcOal4lx2oI0P47SWG1KcZi790rLiw11EXZJe3CnkF1WcveQAMIYSwL&s=10" alt="Walnut Apple Loaf"></div>
+        <div class="p-body">
+          <div class="p-badges"><span class="veg-mark"></span><span class="chip">Eggless</span></div>
+          <h3>Walnut Apple Loaf</h3>
+          <p class="desc">Fresh apple chunks and walnuts baked into a cinnamon-spiced crumb.</p>
+          <div class="p-foot">
+            <span class="price">₹349<small>loaf, ~300gm</small></span>
+            <a class="add-btn" href="https://wa.me/919899168807?text=Hi!%20I'd%20like%20to%20order%20the%20Walnut%20Apple%20Loaf.">Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="p-img g5"><img src="https://hotbreads.com/cdn/shop/products/0I4A5331_1000x1000.jpg?v=1641408220" alt="Mawa Chunk Loaf"></div>
+        <div class="p-body">
+          <div class="p-badges"><span class="veg-mark"></span><span class="chip">Eggless</span></div>
+          <h3>Mawa Chunk Loaf</h3>
+          <p class="desc">Fresh khoya chunks baked into a soft cardamom crumb.</p>
+          <div class="p-foot">
+            <span class="price">₹349<small>loaf, ~300gm</small></span>
+            <a class="add-btn" href="https://wa.me/919899168807?text=Hi!%20I'd%20like%20to%20order%20the%20Mawa%20Chunk%20Loaf.">Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="p-img g3"><img src="https://anniesnoms.com/wp-content/uploads/2019/12/chocolate-orange-cinnamon-loaf-cake-1.jpg" alt="Orange Chocolate Loaf"></div>
+        <div class="p-body">
+          <div class="p-badges"><span class="veg-mark"></span><span class="chip">Eggless</span></div>
+          <h3>Orange Chocolate Loaf</h3>
+          <p class="desc">Fresh orange zest crumb swirled with dark chocolate.</p>
+          <div class="p-foot">
+            <span class="price">₹349<small>loaf, ~300gm</small></span>
+            <a class="add-btn" href="https://wa.me/919899168807?text=Hi!%20I'd%20like%20to%20order%20the%20Orange%20Chocolate%20Loaf.">Order</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="shop-section" id="teacakes">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Tea Cakes</h2>
+      <span class="sub">Small whole cakes, perfect for a cosy tea-time with family.</span>
+    </div>
+    <div class="grid">
+      <div class="product">
+        <div class="p-img g2"><img src="https://images.yummy.ph/yummy/uploads/2019/09/chocolatefudgeloafcakeercipe-1.jpg" alt="Chocolate Mud Cake"></div>
+        <div class="p-body">
+          <div class="p-badges"><span class="veg-mark" title="Pure Veg"></span><span class="chip">Eggless</span></div>
+          <h3>Chocolate Mud Cake</h3>
+          <p class="desc">Dense, dark and fudgy with a chocolate-cream glaze and a hint of coffee.</p>
+          <div class="p-foot">
+            <span class="price">₹1199<small>loaf, ~1000gm</small></span>
+            <a class="add-btn" href="https://wa.me/919899168807?text=Hi!%20I'd%20like%20to%20order%20the%20Chocolate%20Mud%20Cake.">Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="p-img g6"><img src="https://www.restlesschipotle.com/wp-content/uploads/2022/06/lemon-blueberry-bundt-cake-feat.jpg" alt="Lemon Blueberry Cake"></div>
+        <div class="p-body">
+          <div class="p-badges"><span class="veg-mark"></span><span class="chip">Eggless</span></div>
+          <h3>Lemon Blueberry Cake</h3>
+          <p class="desc">Zesty lemon crumb with a blueberry compote swirl through the middle.</p>
+          <div class="p-foot">
+            <span class="price">₹799<small>6" bundt, ~500gm</small></span>
+            <a class="add-btn" href="https://wa.me/919899168807?text=Hi!%20I'd%20like%20to%20order%20the%20Lemon%20Blueberry%20Cake.">Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="p-img g4"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbC4Bx3Y3SKlyQ0QN7q_MFmTrRuxNzxhNpsM-xAbOvoR5oSZ1eWPHGECs&s=10" alt="Parsi Mawa Cake"></div>
+        <div class="p-body">
+          <div class="p-badges"><span class="veg-mark"></span><span class="chip">Eggless</span></div>
+          <h3>Parsi Mawa Cake</h3>
+          <p class="desc">The Irani-café classic — soft fresh-khoya crumb, cardamom, and a mawa glaze.</p>
+          <div class="p-foot">
+            <span class="price">₹799<small>~500gm</small></span>
+            <a class="add-btn" href="https://wa.me/919899168807?text=Hi!%20I'd%20like%20to%20order%20the%20Parsi%20Mawa%20Cake.">Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="p-img g1"><img src="https://static.wixstatic.com/media/165a57_ab386dd5c42a47dfb42eb5f52b96dcba~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg" alt="Oreo Chunks Rich Cake"></div>
+        <div class="p-body">
+          <div class="p-badges"><span class="veg-mark"></span><span class="chip">Eggless</span></div>
+          <h3>Oreo Chunks Rich Cake</h3>
+          <p class="desc">Cookies-and-cream crumb loaded with Oreo chunks and cookie powder.</p>
+          <div class="p-foot">
+            <span class="price">₹599<small>~500gm</small></span>
+            <a class="add-btn" href="https://wa.me/919899168807?text=Hi!%20I'd%20like%20to%20order%20the%20Oreo%20Chunks%20Rich%20Cake.">Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="p-img g2"><img src="https://stellar.co.uk/media/wysiwyg/Rose-Cake-Served.jpg" alt="Pistachio Rose Cake"></div>
+        <div class="p-body">
+          <div class="p-badges"><span class="veg-mark"></span><span class="chip">Eggless</span></div>
+          <h3>Pistachio Rose Cake</h3>
+          <p class="desc">Real pistachio crumb with rose water and a lemon drizzle glaze.</p>
+          <div class="p-foot">
+            <span class="price">₹799<small>~500gm</small></span>
+            <a class="add-btn" href="https://wa.me/919899168807?text=Hi!%20I'd%20like%20to%20order%20the%20Pistachio%20Rose%20Cake.">Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="p-img g6"><img src="https://dietitiandebbie.com/wp-content/uploads/2022/06/Chocolate-Walnut-Banana-Bread-4.jpg" alt="Walnut Banana Chocochip Cake"></div>
+        <div class="p-body">
+          <div class="p-badges"><span class="veg-mark"></span><span class="chip">Eggless</span></div>
+          <h3>Walnut Banana Chocochip Cake</h3>
+          <p class="desc">Ripe bananas, walnuts and chocolate chips baked into a moist crumb.</p>
+          <div class="p-foot">
+            <span class="price">₹799<small>~500gm</small></span>
+            <a class="add-btn" href="https://wa.me/919899168807?text=Hi!%20I'd%20like%20to%20order%20the%20Walnut%20Banana%20Chocochip%20Cake.">Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="p-img g5"><img src="https://www.allthingsmamma.com/wp-content/uploads/2023/02/Orange-Cake-Hero-5-scaled.jpg" alt="Orange Glaze Cake"></div>
+        <div class="p-body">
+          <div class="p-badges"><span class="veg-mark"></span><span class="chip">Eggless</span></div>
+          <h3>Orange Glaze Cake</h3>
+          <p class="desc">Fresh orange zest crumb finished with a tangy orange glaze.</p>
+          <div class="p-foot">
+            <span class="price">₹599<small>~500gm</small></span>
+            <a class="add-btn" href="https://wa.me/919899168807?text=Hi!%20I'd%20like%20to%20order%20the%20Orange%20Glaze%20Cake.">Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="p-img g3"><img src="https://www.lorannoils.com/cdn/shop/articles/R0608_d7e726d7-c7e3-4189-8aea-faa76a7fe014.jpg?v=1778754506" alt="Nutty Cherry Berry Cake"></div>
+        <div class="p-body">
+          <div class="p-badges"><span class="veg-mark"></span><span class="chip">Eggless</span></div>
+          <h3>Nutty Cherry Berry Cake</h3>
+          <p class="desc">Mixed nuts, cherries and berries baked into a rich, moist crumb.</p>
+          <div class="p-foot">
+            <span class="price">₹599<small>~500gm</small></span>
+            <a class="add-btn" href="https://wa.me/919899168807?text=Hi!%20I'd%20like%20to%20order%20the%20Nutty%20Cherry%20Berry%20Cake.">Order</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="shop-section" id="muffins">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Muffins</h2>
+      <span class="sub">Soft, curd-based muffins baked fresh every morning.</span>
+    </div>
+    <div class="grid">
+      <div class="product">
+        <div class="p-img g1"><img src="https://kannanskitchen.com/wp-content/uploads/2022/12/DSC_3703.jpg" alt="Vanilla Chocochip Muffins"></div>
+        <div class="p-body">
+          <div class="p-badges"><span class="veg-mark"></span><span class="chip">Eggless</span></div>
+          <h3>Vanilla Chocochip Muffins</h3>
+          <p class="desc">Soft curd-based muffins studded with chocochips. Baked the same morning.</p>
+          <div class="p-foot">
+            <span class="price">₹349<small>box of 8</small></span>
+            <a class="add-btn" href="https://wa.me/919899168807?text=Hi!%20I'd%20like%20to%20order%20a%20box%20of%20Vanilla%20Chocochip%20Muffins.">Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="p-img g5"><img src="https://flavorquotient.com/wp-content/uploads/2023/05/Tuttifrutti-Cupcakes-FQ-2-3832.jpg" alt="Vanilla Tutti Frutti Muffins"></div>
+        <div class="p-body">
+          <div class="p-badges"><span class="veg-mark"></span><span class="chip">Eggless</span></div>
+          <h3>Vanilla Tutti Frutti Muffins</h3>
+          <p class="desc">Soft vanilla muffins loaded with colourful tutti frutti bits.</p>
+          <div class="p-foot">
+            <span class="price">₹349<small>box of 8</small></span>
+            <a class="add-btn" href="https://wa.me/919899168807?text=Hi!%20I'd%20like%20to%20order%20a%20box%20of%20Vanilla%20Tutti%20Frutti%20Muffins.">Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="p-img g3"><img src="https://www.allrecipes.com/thmb/RdyL1EgIB0Qq_fr5HjdsAmcpMlU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/228553-moist-chocolate-muffins-DDMFS-4x3-a9f73a46938547c99d921613dc167741.jpg" alt="Chocolate Chocochip Muffins"></div>
+        <div class="p-body">
+          <div class="p-badges"><span class="veg-mark"></span><span class="chip">Eggless</span></div>
+          <h3>Chocolate Chocochip Muffins</h3>
+          <p class="desc">Rich cocoa muffins studded with chocochips. Baked the same morning.</p>
+          <div class="p-foot">
+            <span class="price">₹399<small>box of 8</small></span>
+            <a class="add-btn" href="https://wa.me/919899168807?text=Hi!%20I'd%20like%20to%20order%20a%20box%20of%20Chocolate%20Chocochip%20Muffins.">Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="p-img g2"><img src="https://i.ytimg.com/vi/LXhpqijuVu0/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCSqq4UFUXYM5H4hVMqwGIjfpjFeQ" alt="Orange Nutella Muffins"></div>
+        <div class="p-body">
+          <div class="p-badges"><span class="veg-mark"></span><span class="chip">Eggless</span></div>
+          <h3>Orange Nutella Muffins</h3>
+          <p class="desc">Orange-zest muffins with a molten Nutella centre.</p>
+          <div class="p-foot">
+            <span class="price">₹399<small>box of 8</small></span>
+            <a class="add-btn" href="https://wa.me/919899168807?text=Hi!%20I'd%20like%20to%20order%20a%20box%20of%20Orange%20Nutella%20Muffins.">Order</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="shop-section" id="cookies">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Cookie Boxes</h2>
+      <span class="sub">Airtight boxes, fresh for 3 weeks — perfect for gifting.</span>
+    </div>
+    <div class="grid">
+      <div class="product">
+        <div class="p-img g3"><img src="https://www.modernhoney.com/wp-content/uploads/2021/05/Classic-Chocolate-Chip-Cookies-5-scaled.jpg" alt="Classic Chocochip Cookies"></div>
+        <div class="p-body">
+          <div class="p-badges"><span class="veg-mark"></span><span class="chip">Eggless</span></div>
+          <h3>Classic Chocochip Cookies</h3>
+          <p class="desc">Buttery, chewy cookies loaded with classic chocolate chips.</p>
+          <div class="p-foot">
+            <span class="price">₹349<small>box of 6</small></span>
+            <a class="add-btn" href="https://wa.me/919899168807?text=Hi!%20I'd%20like%20to%20order%20a%20box%20of%20Classic%20Chocochip%20Cookies.">Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="p-img g1"><img src="https://www.purelykaylie.com/wp-content/uploads/2021/02/Vegan-Double-Chocolate-Chip-Cookies-12.jpg" alt="Chocolate Chocochip Cookies"></div>
+        <div class="p-body">
+          <div class="p-badges"><span class="veg-mark"></span><span class="chip">Eggless</span></div>
+          <h3>Chocolate Chocochip Cookies</h3>
+          <p class="desc">Rich cocoa dough loaded with chocolate chips in every bite.</p>
+          <div class="p-foot">
+            <span class="price">₹349<small>box of 6</small></span>
+            <a class="add-btn" href="https://wa.me/919899168807?text=Hi!%20I'd%20like%20to%20order%20a%20box%20of%20Chocolate%20Chocochip%20Cookies.">Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="p-img g4"><img src="https://www.bakersplus.com/content/v2/binary/recipe/images/5a6a19d684ae26c72d261a6b-original.jpg" alt="Almond Cranberry Cookies"></div>
+        <div class="p-body">
+          <div class="p-badges"><span class="veg-mark"></span><span class="chip">Eggless</span></div>
+          <h3>Almond Cranberry Cookies</h3>
+          <p class="desc">Buttery almond dough studded with tangy dried cranberries.</p>
+          <div class="p-foot">
+            <span class="price">₹299<small>box of 8</small></span>
+            <a class="add-btn" href="https://wa.me/919899168807?text=Hi!%20I'd%20like%20to%20order%20a%20box%20of%20Almond%20Cranberry%20Cookies.">Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="p-img g2"><img src="https://img.taste.com.au/FH2xb58L/taste/2010/01/choc-chip-cookies-image1-197537-1.jpg" alt="Vanilla Chocochip Cookies"></div>
+        <div class="p-body">
+          <div class="p-badges"><span class="veg-mark"></span><span class="chip">Eggless</span></div>
+          <h3>Vanilla Chocochip Cookies</h3>
+          <p class="desc">Buttery vanilla dough loaded with chocolate chips in every bite.</p>
+          <div class="p-foot">
+            <span class="price">₹299<small>box of 8</small></span>
+            <a class="add-btn" href="https://wa.me/919899168807?text=Hi!%20I'd%20like%20to%20order%20a%20box%20of%20Vanilla%20Chocochip%20Cookies.">Order</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--
+<section class="shop-section" id="brownies">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Brownies</h2>
+      <span class="sub">Fudgy, dense and baked in small batches — a classic that never gets old.</span>
+    </div>
+    <div class="grid">
+      <div class="product">
+        <div class="p-img g1">🍫</div>
+        <div class="p-body">
+          <div class="p-badges"><span class="veg-mark"></span><span class="chip">Eggless</span></div>
+          <h3>Classic Fudge Brownie</h3>
+          <p class="desc">Dense, fudgy chocolate brownie with a crackly top.</p>
+          <div class="p-foot">
+            <span class="price">₹399<small>box of 4</small></span>
+            <a class="add-btn" href="https://wa.me/919899168807?text=Hi!%20I'd%20like%20to%20order%20a%20box%20of%20Classic%20Fudge%20Brownies.">Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="p-img g4">🌰</div>
+        <div class="p-body">
+          <div class="p-badges"><span class="veg-mark"></span><span class="chip">Eggless</span></div>
+          <h3>Walnut Brownie</h3>
+          <p class="desc">Classic fudge brownie loaded with crunchy walnuts.</p>
+          <div class="p-foot">
+            <span class="price">₹429<small>box of 4</small></span>
+            <a class="add-btn" href="https://wa.me/919899168807?text=Hi!%20I'd%20like%20to%20order%20a%20box%20of%20Walnut%20Brownies.">Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="p-img g5">🌰</div>
+        <div class="p-body">
+          <div class="p-badges"><span class="veg-mark"></span><span class="chip">Eggless</span></div>
+          <h3>Nutella Brownie</h3>
+          <p class="desc">Fudgy brownie swirled with a molten Nutella centre.</p>
+          <div class="p-foot">
+            <span class="price">₹449<small>box of 4</small></span>
+            <a class="add-btn" href="https://wa.me/919899168807?text=Hi!%20I'd%20like%20to%20order%20a%20box%20of%20Nutella%20Brownies.">Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="p-img g3">🍪</div>
+        <div class="p-body">
+          <div class="p-badges"><span class="veg-mark"></span><span class="chip">Eggless</span></div>
+          <h3>Biscoff Brownie</h3>
+          <p class="desc">Fudgy brownie topped with Biscoff spread and crushed Lotus biscuits.</p>
+          <div class="p-foot">
+            <span class="price">₹449<small>box of 4</small></span>
+            <a class="add-btn" href="https://wa.me/919899168807?text=Hi!%20I'd%20like%20to%20order%20a%20box%20of%20Biscoff%20Brownies.">Order</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+-->
+
+<section class="shop-section" id="icingcakes">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Icing Cakes</h2>
+      <span class="sub">Classic whipped-cream icing cakes, in two sizes.</span>
+    </div>
+    <div class="grid">
+      <div class="product">
+        <div class="p-body">
+          <div class="p-badges"><span class="veg-mark"></span><span class="chip">Eggless</span></div>
+          <h3>Pineapple Cake</h3>
+          <p class="desc">Soft vanilla sponge layered with pineapple and whipped cream icing.</p>
+          <div class="p-foot">
+            <span class="price">₹599 / ₹1099<small>500gm / 1000gm</small></span>
+            <a class="add-btn" href="https://wa.me/919899168807?text=Hi!%20I'd%20like%20to%20order%20the%20Pineapple%20Cake.">Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="p-body">
+          <div class="p-badges"><span class="veg-mark"></span><span class="chip">Eggless</span></div>
+          <h3>Premium Truffle Cake</h3>
+          <p class="desc">Rich chocolate truffle sponge layered with silky chocolate ganache icing.</p>
+          <div class="p-foot">
+            <span class="price">₹799 / ₹1399<small>500gm / 1000gm</small></span>
+            <a class="add-btn" href="https://wa.me/919899168807?text=Hi!%20I'd%20like%20to%20order%20the%20Premium%20Truffle%20Cake.">Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="p-body">
+          <div class="p-badges"><span class="veg-mark"></span><span class="chip">Eggless</span></div>
+          <h3>Nutsy Chocolate Cake</h3>
+          <p class="desc">Chocolate sponge loaded with crunchy nuts and chocolate whipped cream icing.</p>
+          <div class="p-foot">
+            <span class="price">₹799 / ₹1399<small>500gm / 1000gm</small></span>
+            <a class="add-btn" href="https://wa.me/919899168807?text=Hi!%20I'd%20like%20to%20order%20the%20Nutsy%20Chocolate%20Cake.">Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="p-body">
+          <div class="p-badges"><span class="veg-mark"></span><span class="chip">Eggless</span></div>
+          <h3>Fruit Cake</h3>
+          <p class="desc">Vanilla sponge layered with fresh seasonal fruits and whipped cream icing.</p>
+          <div class="p-foot">
+            <span class="price">₹699 / ₹1199<small>500gm / 1000gm</small></span>
+            <a class="add-btn" href="https://wa.me/919899168807?text=Hi!%20I'd%20like%20to%20order%20the%20Fruit%20Cake.">Order</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="icing-note">
+      <p>These are just a starting point — we do tons of flavours and fully custom icing cake designs. Tell us what you have in mind on WhatsApp and we'll sort out the flavour, size and look.</p>
+      <a class="btn btn-gold" href="https://wa.me/919899168807?text=Hi!%20I'd%20like%20to%20know%20more%20about%20icing%20cake%20flavours%20and%20customisation.">Ask on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section class="shop-section" id="custom-quote">
+  <div class="wrap">
+    <div class="custom">
+      <div>
+        <h2>Planning something special? We'll bake your dream cake.</h2>
+        <p>Birthdays, anniversaries, poojas, office gifting — tell us the occasion, flavours and size, and we'll craft it fresh for your date.</p>
+        <ul>
+          <li>Custom flavours &amp; designs</li>
+          <li>Always eggless</li>
+          <li>Fresh ingredients</li>
+        </ul>
+      </div>
+      <a class="btn btn-gold" href="https://wa.me/919899168807?text=Hi!%20I'd%20like%20a%20custom%20cake.%20Occasion%3A%20___%20%7C%20Date%3A%20___%20%7C%20Flavour%20ideas%3A%20___">Get a Custom Quote</a>
+    </div>
+  </div>
+</section>
+
+<section id="story">
+  <div class="wrap">
+    <div class="story-box">
+      <div class="story-medal"><b>28</b><span>bakes on<br>the menu</span></div>
+      <div>
+        <h2>From our dining table to yours.</h2>
+        <p>Sheenu Bakes began with one home baker, a spiral recipe notebook, and neighbours who kept asking for "just one more box." Every recipe is handwritten, costed to the gram, and perfected over dozens of bakes before it earns a place on this menu.</p>
+        <p>We bake in small batches, only on order — which means your cake was never sitting in a display fridge. It was in the oven this morning because you asked for it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="col">
+        <a class="logo" href="#top">Sheenu Bakes<small>Home Bakery · Noida</small></a>
+        <p class="mini">Eggless cakes, cookies, Swiss rolls and tea cakes — baked fresh to order from our home kitchen.</p>
+      </div>
+      <div class="col">
+        <h4>Shop</h4>
+        <a href="#bestsellers">Bestsellers</a>
+        <a href="#loafs">Loafs</a>
+        <a href="#teacakes">Tea Cakes</a>
+        <a href="#muffins">Muffins</a>
+        <a href="#cookies">Cookie Boxes</a>
+        <!-- <a href="#brownies">Brownies</a> -->
+        <a href="#icingcakes">Icing Cakes</a>
+      </div>
+      <div class="col">
+        <h4>Get in touch</h4>
+        <a href="https://wa.me/919899168807">WhatsApp: +91 98991 68807</a>
+        <a href="https://instagram.com/sheenubakes">Instagram: @sheenubakes</a>
+        <p>Noida, Uttar Pradesh</p>
+        <p>Orders: 10 am – 8 pm, all days</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Sheenu Bakes<!-- · FSSAI Reg. No. XXXXXXXXXXXXXX --></span>
+      <span>Prices indicative — final quote shared on WhatsApp based on size &amp; customisation.</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/919899168807?text=Hi%20Sheenu%20Bakes!%20I'd%20like%20to%20place%20an%20order." aria-label="Chat on WhatsApp">💬</a>
+</body>
+</html>
